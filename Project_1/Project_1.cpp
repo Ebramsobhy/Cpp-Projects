@@ -82,7 +82,8 @@ enWinner WhoWonTheRound(stRoundInfo RoundInfo)
       {
          return enWinner::Computer; 
       }
-   
+      break; // Add break here
+
    case enGameChoice::Scissor:
       if (RoundInfo.ComputerChoice == enGameChoice::Stone)
       {
@@ -93,6 +94,7 @@ enWinner WhoWonTheRound(stRoundInfo RoundInfo)
 
    return enWinner::Player1;
 }
+
 
 enWinner WhoWonTheGame(short Player1WinTimes, short ComputerChoice)
 {
@@ -186,7 +188,7 @@ stGameResults PlayGame(short HowManyRounds)
 string Tabs(short NumberOfTabs) 
 { 
      string t = ""; 
-     for (int i = 1; i < NumberOfTabs; i++) 
+     for (int i = 1; i <= NumberOfTabs; i++) 
      { 
        t = t + "\t"; 
        cout << t; 
